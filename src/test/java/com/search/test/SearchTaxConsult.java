@@ -1,32 +1,23 @@
 package com.search.test;
 
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
 import com.baseclass.BaseClass;
-import com.utilities.*;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SearchTaxConsult extends BaseClass {
 
-	
 	@Test
 	public void searchTaxConsultIndia() throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		 ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		 WebDriverWait wait = new WebDriverWait(driver, 100);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		WebDriverWait wait = new WebDriverWait(driver, 100);
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		driver.get(baseUrl);
 		driver.findElement(By.id("login_Layer")).click();
@@ -59,7 +50,8 @@ public class SearchTaxConsult extends BaseClass {
 						.xpath("//*[@id=\"root\"]/div[4]/div/div/section[2]/div[2]/article[" + j + "]/div[1]/div[1]/a"))
 						.getAttribute("title");
 				if (JobProfile.contains(profilekey1) || JobProfile.contains(profilekey2)
-						|| JobProfile.contains(profilekey3) || JobProfile.contains(profilekey4) || JobProfile.contains(profilekey5)) {
+						|| JobProfile.contains(profilekey3) || JobProfile.contains(profilekey4)
+						|| JobProfile.contains(profilekey5)) {
 					driver.findElement(
 							By.xpath("//*[@id=\"root\"]/div[4]/div/div/section[2]/div[2]/article[" + j + "]")).click();
 					for (String handle : driver.getWindowHandles()) {
