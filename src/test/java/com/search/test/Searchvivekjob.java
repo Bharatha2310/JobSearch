@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import com.baseclass.BaseClass;
 
-public class SearchTaxConsult extends BaseClass {
+public class Searchvivekjob extends BaseClass {
 
 	@Test
 	public void searchTaxConsultIndia() throws InterruptedException {
